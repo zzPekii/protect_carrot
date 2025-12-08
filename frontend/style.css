@@ -1,0 +1,20 @@
+/* body style */
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#gameCanvas {
+  border: 1px solid #333;
+  background: #fffbe6; /* background */
+}
+
+/* UI size */
+#ui {
+  margin-top: 10px;
+}
+
+#statusText {
+  margin-left: 20px;
+  font-weight: bold;
+}
