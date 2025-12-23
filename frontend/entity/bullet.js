@@ -66,3 +66,5 @@ class Bullet {
         ctx.fill();
     }
 }
+
+module.exports = Bullet;

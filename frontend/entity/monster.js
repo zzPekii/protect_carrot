@@ -32,3 +32,5 @@ class Monster {
         ctx.fillRect(this.x - 10, this.y - 10, 20, 20);
     }
 }
+
+module.exports = Monster;

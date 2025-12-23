@@ -1,3 +1,5 @@
+const Bullet = require("./bullet");
+
 class Tower {
     constructor(x, y) {
         this.x = x;
@@ -41,3 +43,5 @@ class Tower {
         ctx.fill();
     }
 }
+
+module.exports = Tower;

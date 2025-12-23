@@ -1,4 +1,7 @@
 // 游戏类
+const Monster = require("./entity/monster");
+const Tower = require("./entity/tower");
+
 class Game {
     constructor(ctx, livesText, statusText, waveText) {
         this.ctx = ctx;
@@ -137,3 +140,5 @@ class Game {
         this.statusText.textContent = win ? 'You Win!' : 'Carrot eaten!';
     }
 }
+
+module.exports = Game;
