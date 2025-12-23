@@ -15,4 +15,6 @@
 
 2025.12.23
 
-Implement `Bullet` class
+Implement `Bullet` class, and drawing bullet in canvas
+
+Implement waves system in game
