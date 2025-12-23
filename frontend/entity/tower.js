@@ -3,10 +3,11 @@ class Tower {
         this.x = x;
         this.y = y;
         this.range = 120;
+        // 攻击cd
         this.cooldown = 0;
     }
 
-    update(dt, monsters) {
+    update(dt, monsters, bullets) {
         this.cooldown -= dt;
         if (this.cooldown > 0) return;
 
@@ -14,9 +15,12 @@ class Tower {
         let minDist = Infinity;
 
         monsters.forEach(m => {
+            if (!m.alive) return;
+
             const dx = m.x - this.x;
             const dy = m.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
+
             if (dist <= this.range && dist < minDist) {
                 minDist = dist;
                 target = m;
@@ -24,11 +28,9 @@ class Tower {
         });
 
         if (target) {
-            target.hp -= 1;
+            // create a bullet
+            bullets.push(new Bullet(this.x, this.y, target))
             this.cooldown = 0.5;
-            if (target.hp <= 0) {
-                target.alive = false;
-            }
         }
     }
 

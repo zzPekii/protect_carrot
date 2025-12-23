@@ -8,6 +8,7 @@ class Game {
 
         this.monsters = [];
         this.towers = [];
+        this.bullets = [];
         this.carrotLives = 10;
 
         this.running = false;
@@ -50,15 +51,11 @@ class Game {
     }
 
     update(dt) {
-        // update monsters
         this.monsters.forEach(m => m.update(dt, this));
-
-        // remove dead monsters
         this.monsters = this.monsters.filter(m => m.alive);
-
-        // update towers attack (keep your logic for now)
-        this.towers.forEach(t => t.update(dt, this.monsters));
-
+        this.towers.forEach(t => t.update(dt, this.monsters, this.bullets));
+        this.bullets.forEach(b => b.update(dt));
+        this.bullets = this.bullets.filter(b => b.alive);
 
         this.monsters = this.monsters.filter(m => m.alive);
 
@@ -73,6 +70,7 @@ class Game {
         this.drawMap();
         this.towers.forEach(t => t.draw(this.ctx));
         this.monsters.forEach(m => m.draw(this.ctx));
+        this.bullets.forEach(b => b.draw(ctx));
         this.drawCarrot();
     }
 
