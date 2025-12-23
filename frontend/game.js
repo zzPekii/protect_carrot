@@ -1,3 +1,5 @@
+// 游戏类
+
 class Game {
     constructor(ctx, livesText, statusText) {
         this.ctx = ctx;

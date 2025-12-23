@@ -1,5 +1,4 @@
-
-
+// 怪物类
 class Monster {
     constructor(x, y) {
         this.x = x;
